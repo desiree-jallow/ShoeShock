@@ -40,6 +40,9 @@
 		D7296AF424A674B3003A8384 = {
 			isa = PBXGroup;
 			children = (
+				D7296B1724A69D71003A8384 /* Model */,
+				D7296B1624A69D6D003A8384 /* View */,
+				D7296B1524A69D57003A8384 /* Controller */,
 				D7296AFF24A674B3003A8384 /* ShoeShock */,
 				D7296AFE24A674B3003A8384 /* Products */,
 			);
@@ -58,13 +61,34 @@
 			children = (
 				D7296B0024A674B3003A8384 /* AppDelegate.swift */,
 				D7296B0224A674B3003A8384 /* SceneDelegate.swift */,
-				D7296B0424A674B3003A8384 /* ViewController.swift */,
-				D7296B0624A674B3003A8384 /* Main.storyboard */,
 				D7296B0924A674B3003A8384 /* Assets.xcassets */,
 				D7296B0B24A674B3003A8384 /* LaunchScreen.storyboard */,
 				D7296B0E24A674B3003A8384 /* Info.plist */,
 			);
 			path = ShoeShock;
+			sourceTree = "<group>";
+		};
+		D7296B1524A69D57003A8384 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D7296B0424A674B3003A8384 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D7296B1624A69D6D003A8384 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7296B0624A674B3003A8384 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D7296B1724A69D71003A8384 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
