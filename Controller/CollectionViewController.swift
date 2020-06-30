@@ -34,6 +34,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! ShoeCollectionViewCell
             let shoe = myShoes[indexPath.row]
             cell.updateViews(shoe: shoe)
+            cell.layer.cornerRadius = 8
             return cell
             
           }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RAv-tx-epk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-Gx-YMo">
-                                <rect key="frame" x="5" y="44" width="404" height="769"/>
+                                <rect key="frame" x="5" y="60" width="404" height="753"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uC9-qh-Hly">
                                     <size key="itemSize" width="185" height="238"/>
@@ -34,25 +34,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="PB0-sh-nAD">
-                                                    <rect key="frame" x="10" y="0.0" width="165" height="62.5"/>
+                                                    <rect key="frame" x="10" y="0.0" width="165" height="67.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converse: Chuck Taylor All Star" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-xu-bxY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="147" height="62.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="147" height="67.5"/>
                                                             <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="12"/>
-                                                            <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.13425921605952026" green="0.13558851522842641" blue="0.13558851522842641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evg-7r-mrn">
-                                                            <rect key="frame" x="147" y="0.0" width="18" height="62.5"/>
-                                                            <color key="tintColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <rect key="frame" x="147" y="0.0" width="18" height="67.5"/>
+                                                            <color key="tintColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="heart" catalog="system"/>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="$49.95" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAO-P9-JHy">
-                                                    <rect key="frame" x="10" y="77.5" width="165" height="17.5"/>
-                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="13"/>
-                                                    <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="10" y="72.5" width="165" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                                    <color key="textColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="uj9-Mq-Lwz">
@@ -69,14 +69,14 @@
                                                 <constraint firstItem="GAO-P9-JHy" firstAttribute="leading" secondItem="5aS-UR-OpV" secondAttribute="leading" constant="10" id="EXQ-rd-rCo"/>
                                                 <constraint firstAttribute="trailing" secondItem="uj9-Mq-Lwz" secondAttribute="trailing" constant="15" id="GC0-zL-5Ih"/>
                                                 <constraint firstItem="PB0-sh-nAD" firstAttribute="top" secondItem="5aS-UR-OpV" secondAttribute="top" id="Nsq-80-HBJ"/>
-                                                <constraint firstItem="GAO-P9-JHy" firstAttribute="top" secondItem="PB0-sh-nAD" secondAttribute="bottom" constant="15" id="RsF-QN-yAp"/>
+                                                <constraint firstItem="GAO-P9-JHy" firstAttribute="top" secondItem="PB0-sh-nAD" secondAttribute="bottom" constant="5" id="RsF-QN-yAp"/>
                                                 <constraint firstItem="uj9-Mq-Lwz" firstAttribute="top" secondItem="GAO-P9-JHy" secondAttribute="bottom" constant="10" id="aTY-EG-U5l"/>
                                                 <constraint firstAttribute="trailing" secondItem="PB0-sh-nAD" secondAttribute="trailing" constant="10" id="eNk-eN-69E"/>
                                                 <constraint firstAttribute="bottom" secondItem="uj9-Mq-Lwz" secondAttribute="bottom" constant="3" id="nxM-GC-YpW"/>
                                                 <constraint firstAttribute="trailing" secondItem="GAO-P9-JHy" secondAttribute="trailing" constant="10" id="x4X-cC-aQE"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="0.49506197969999999" green="0.70821208769999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.49411764705882355" green="0.70821208769999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="customSize" width="185" height="238"/>
                                         <connections>
                                             <outlet property="priceLabel" destination="GAO-P9-JHy" id="z9H-jH-DQm"/>
@@ -90,13 +90,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="h6A-Gx-YMo" secondAttribute="bottom" constant="83" id="DHn-aQ-UoZ"/>
-                            <constraint firstItem="h6A-Gx-YMo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="fYM-aC-Fyx"/>
+                            <constraint firstItem="h6A-Gx-YMo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="fYM-aC-Fyx"/>
                             <constraint firstAttribute="trailing" secondItem="h6A-Gx-YMo" secondAttribute="trailing" constant="5" id="shW-zc-50i"/>
                             <constraint firstItem="h6A-Gx-YMo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="sjG-t9-wXN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Yin-72-HOn">
+                        <barButtonItem key="rightBarButtonItem" image="cart" catalog="system" id="kpd-yg-4lL">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="h6A-Gx-YMo" id="qAO-3a-Fmc"/>
@@ -104,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2539.130434782609" y="160.71428571428569"/>
+            <point key="canvasLocation" x="-1628.985507246377" y="160.71428571428569"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4IA-ea-gaE">
@@ -170,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xix-Ed-lvK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-660.86956521739137" y="152.67857142857142"/>
+            <point key="canvasLocation" x="249.27536231884059" y="152.67857142857142"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="0Ld-kG-w7I">
@@ -233,7 +238,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQx-CJ-T0m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="457.97101449275368" y="160.71428571428569"/>
+            <point key="canvasLocation" x="1368.1159420289855" y="160.71428571428569"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CRR-h8-o9z">
@@ -248,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZwT-eO-cAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1285" y="176"/>
+            <point key="canvasLocation" x="2194.202898550725" y="175.44642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LaK-jd-Wr0">
@@ -266,7 +271,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEK-oq-Pcs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1571.0144927536232" y="152.67857142857142"/>
+            <point key="canvasLocation" x="-660.86956521739137" y="152.67857142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M9o-VE-LsG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RAv-tx-epk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Erd-k5-FVx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1cP-Yz-ZMN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="apI-f5-zsw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2539.130434782609" y="160.71428571428569"/>
         </scene>
     </scenes>
     <resources>

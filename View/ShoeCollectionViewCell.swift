@@ -20,6 +20,7 @@ class ShoeCollectionViewCell: UICollectionViewCell {
     shoeImage.image = UIImage(named: shoe.imageName)
     titleLabel.text = shoe.title
     priceLabel.text = shoe.price
+    backgroundColor = shoe.backgroundColor
         
     }
     
