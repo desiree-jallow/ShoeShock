@@ -8,91 +8,96 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Collection View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ShoeShock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CollectionViewController" customModule="ShoeShock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-Gx-YMo">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="5" y="44" width="404" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uC9-qh-Hly">
-                                    <size key="itemSize" width="182" height="202"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uC9-qh-Hly">
+                                    <size key="itemSize" width="185" height="238"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="U1v-5r-Of9">
-                                        <rect key="frame" x="0.0" y="0.0" width="182" height="202"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="U1v-5r-Of9" customClass="ShoeCollectionViewCell" customModule="ShoeShock" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="185" height="238"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5aS-UR-OpV">
-                                            <rect key="frame" x="0.0" y="0.0" width="182" height="202"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="185" height="238"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-xu-bxY">
-                                                    <rect key="frame" x="20" y="20" width="142" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="EJg-Iu-SLP"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="21"/>
-                                                    <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$49.95" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAO-P9-JHy">
-                                                    <rect key="frame" x="20" y="49" width="142" height="21"/>
-                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="PB0-sh-nAD">
+                                                    <rect key="frame" x="10" y="0.0" width="165" height="62.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converse: Chuck Taylor All Star" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-xu-bxY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="147" height="62.5"/>
+                                                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="12"/>
+                                                            <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evg-7r-mrn">
+                                                            <rect key="frame" x="147" y="0.0" width="18" height="62.5"/>
+                                                            <color key="tintColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <state key="normal" image="heart" catalog="system"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="$49.95" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAO-P9-JHy">
+                                                    <rect key="frame" x="10" y="77.5" width="165" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="13"/>
                                                     <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="uj9-Mq-Lwz">
-                                                    <rect key="frame" x="20" y="78" width="141" height="108"/>
+                                                    <rect key="frame" x="15" y="105" width="155" height="130"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="108" id="aci-gb-qfX"/>
+                                                        <constraint firstAttribute="width" constant="150" id="N1u-AV-L2j"/>
+                                                        <constraint firstAttribute="height" constant="130" id="jzS-nH-wnr"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Emj-96-zYG">
-                                                    <rect key="frame" x="143" y="8" width="50" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="c09-fP-x7h"/>
-                                                    </constraints>
-                                                    <color key="tintColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" image="heart" catalog="system"/>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="uj9-Mq-Lwz" secondAttribute="bottom" constant="16" id="0mJ-vT-Aqb"/>
-                                                <constraint firstItem="Emj-96-zYG" firstAttribute="top" secondItem="5aS-UR-OpV" secondAttribute="topMargin" id="4yL-g1-gvn"/>
-                                                <constraint firstItem="uj9-Mq-Lwz" firstAttribute="leading" secondItem="5aS-UR-OpV" secondAttribute="leading" constant="20" id="8Ah-4D-TLE"/>
-                                                <constraint firstAttribute="trailing" secondItem="GAO-P9-JHy" secondAttribute="trailing" constant="20" symbolic="YES" id="9lK-FT-37t"/>
-                                                <constraint firstAttribute="trailing" secondItem="uj9-Mq-Lwz" secondAttribute="trailing" constant="21" id="C08-ok-yrE"/>
-                                                <constraint firstItem="GAO-P9-JHy" firstAttribute="leading" secondItem="5aS-UR-OpV" secondAttribute="leading" constant="20" symbolic="YES" id="DFb-JV-YtH"/>
-                                                <constraint firstAttribute="trailing" secondItem="uaY-xu-bxY" secondAttribute="trailing" constant="20" symbolic="YES" id="T1k-KZ-WcI"/>
-                                                <constraint firstItem="uaY-xu-bxY" firstAttribute="top" secondItem="5aS-UR-OpV" secondAttribute="top" constant="20" symbolic="YES" id="V6t-EQ-5gK"/>
-                                                <constraint firstItem="uaY-xu-bxY" firstAttribute="leading" secondItem="5aS-UR-OpV" secondAttribute="leading" constant="20" symbolic="YES" id="ZcK-NY-yLe"/>
-                                                <constraint firstItem="uj9-Mq-Lwz" firstAttribute="top" secondItem="GAO-P9-JHy" secondAttribute="bottom" constant="8" id="jyU-82-RT9"/>
-                                                <constraint firstItem="GAO-P9-JHy" firstAttribute="top" secondItem="uaY-xu-bxY" secondAttribute="bottom" constant="8" symbolic="YES" id="ltc-3j-WNb"/>
-                                                <constraint firstAttribute="trailing" secondItem="Emj-96-zYG" secondAttribute="trailing" constant="-11" id="ydT-K0-DlA"/>
+                                                <constraint firstItem="uj9-Mq-Lwz" firstAttribute="leading" secondItem="5aS-UR-OpV" secondAttribute="leading" constant="15" id="0LQ-xG-wo0"/>
+                                                <constraint firstItem="PB0-sh-nAD" firstAttribute="leading" secondItem="5aS-UR-OpV" secondAttribute="leading" constant="10" id="3J3-Ss-Wks"/>
+                                                <constraint firstItem="GAO-P9-JHy" firstAttribute="leading" secondItem="5aS-UR-OpV" secondAttribute="leading" constant="10" id="EXQ-rd-rCo"/>
+                                                <constraint firstAttribute="trailing" secondItem="uj9-Mq-Lwz" secondAttribute="trailing" constant="15" id="GC0-zL-5Ih"/>
+                                                <constraint firstItem="PB0-sh-nAD" firstAttribute="top" secondItem="5aS-UR-OpV" secondAttribute="top" id="Nsq-80-HBJ"/>
+                                                <constraint firstItem="GAO-P9-JHy" firstAttribute="top" secondItem="PB0-sh-nAD" secondAttribute="bottom" constant="15" id="RsF-QN-yAp"/>
+                                                <constraint firstItem="uj9-Mq-Lwz" firstAttribute="top" secondItem="GAO-P9-JHy" secondAttribute="bottom" constant="10" id="aTY-EG-U5l"/>
+                                                <constraint firstAttribute="trailing" secondItem="PB0-sh-nAD" secondAttribute="trailing" constant="10" id="eNk-eN-69E"/>
+                                                <constraint firstAttribute="bottom" secondItem="uj9-Mq-Lwz" secondAttribute="bottom" constant="3" id="nxM-GC-YpW"/>
+                                                <constraint firstAttribute="trailing" secondItem="GAO-P9-JHy" secondAttribute="trailing" constant="10" id="x4X-cC-aQE"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="0.49506197969999999" green="0.70821208769999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="customSize" width="182" height="202"/>
+                                        <size key="customSize" width="185" height="238"/>
+                                        <connections>
+                                            <outlet property="priceLabel" destination="GAO-P9-JHy" id="z9H-jH-DQm"/>
+                                            <outlet property="shoeImage" destination="uj9-Mq-Lwz" id="YYK-cb-zai"/>
+                                            <outlet property="titleLabel" destination="uaY-xu-bxY" id="kJy-U5-EfA"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h6A-Gx-YMo" secondAttribute="bottom" id="DHn-aQ-UoZ"/>
-                            <constraint firstItem="h6A-Gx-YMo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fYM-aC-Fyx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h6A-Gx-YMo" secondAttribute="trailing" id="shW-zc-50i"/>
-                            <constraint firstItem="h6A-Gx-YMo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sjG-t9-wXN"/>
+                            <constraint firstAttribute="bottom" secondItem="h6A-Gx-YMo" secondAttribute="bottom" constant="83" id="DHn-aQ-UoZ"/>
+                            <constraint firstItem="h6A-Gx-YMo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="fYM-aC-Fyx"/>
+                            <constraint firstAttribute="trailing" secondItem="h6A-Gx-YMo" secondAttribute="trailing" constant="5" id="shW-zc-50i"/>
+                            <constraint firstItem="h6A-Gx-YMo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="sjG-t9-wXN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="h6A-Gx-YMo" id="qAO-3a-Fmc"/>
                     </connections>
@@ -110,23 +115,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="7kD-l4-Q9O">
-                                <rect key="frame" x="20" y="64" width="374" height="698"/>
+                                <rect key="frame" x="20" y="108" width="374" height="605"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ww-v9-8fu">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="232.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="201.5"/>
                                         <color key="backgroundColor" red="0.49506197969999999" green="0.70821208769999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="XVU-dr-O2n">
-                                        <rect key="frame" x="0.0" y="232.5" width="365" height="233"/>
+                                        <rect key="frame" x="0.0" y="201.5" width="365" height="202"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Converse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvu-XL-knI">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="233"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="202"/>
                                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$49.95" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNW-sW-6Xo">
-                                                <rect key="frame" x="215" y="0.0" width="150" height="233"/>
+                                                <rect key="frame" x="215" y="0.0" width="150" height="202"/>
                                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -134,7 +139,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kWf-ny-o3u">
-                                        <rect key="frame" x="0.0" y="465.5" width="362.5" height="232.5"/>
+                                        <rect key="frame" x="0.0" y="403.5" width="362.5" height="201.5"/>
                                         <string key="text">The Converse Chuck Taylor All Star Low Sneaker is a high-impact statement-maker that will never go out of style. The low-top canvas silhouette, lace-up front, and a vulcanized rubber sole provide a great fit and easy everyday feel. </string>
                                         <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
                                         <color key="textColor" red="0.1894630393" green="0.1894630393" blue="0.1894630393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -145,12 +150,6 @@
                                     <constraint firstAttribute="trailing" secondItem="9Ww-v9-8fu" secondAttribute="trailing" constant="20" id="RGa-vz-R3R"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPO-hk-zcB">
-                                <rect key="frame" x="331" y="71" width="31" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="cart" catalog="system"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -161,10 +160,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jLx-rR-QDP"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="umz-wj-014">
+                        <barButtonItem key="rightBarButtonItem" image="cart" catalog="system" id="n6p-Pe-0ZE">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xix-Ed-lvK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1571.0144927536232" y="152.67857142857142"/>
+            <point key="canvasLocation" x="-660.86956521739137" y="152.67857142857142"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="0Ld-kG-w7I">
@@ -174,13 +180,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BZu-ob-MZE">
+                            <rect key="frame" x="0.0" y="246" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                            <state key="normal" title="Purchase">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="OML-yb-Xza">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="190" id="OML-yb-Xza">
+                                <rect key="frame" x="0.0" y="28" width="414" height="190"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OML-yb-Xza" id="K26-OV-6W1">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="tdN-u3-TCc">
+                                            <rect key="frame" x="20" y="11" width="173" height="168"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.6486274823" green="0.65949387400000004" blue="0.71511861219999995" alpha="0.46438891267123289" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Converse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9d-JQ-9BY">
+                                            <rect key="frame" x="239" y="65" width="73" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$49.95" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84c-6j-XDN">
+                                            <rect key="frame" x="239" y="94" width="75" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="itx-AQ-jXx">
+                                            <rect key="frame" x="227" y="137" width="94" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stepper>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -193,7 +233,40 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQx-CJ-T0m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-451" y="161"/>
+            <point key="canvasLocation" x="457.97101449275368" y="160.71428571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CRR-h8-o9z">
+            <objects>
+                <viewController id="1YP-FL-ky7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="moF-Aj-wWL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8cF-mn-HMS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZwT-eO-cAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1285" y="176"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LaK-jd-Wr0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NHg-Kf-1qH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5gd-Fh-fpN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kQc-rF-a00" kind="relationship" relationship="rootViewController" id="pkt-4l-Qfz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEK-oq-Pcs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1571.0144927536232" y="152.67857142857142"/>
         </scene>
     </scenes>
     <resources>
