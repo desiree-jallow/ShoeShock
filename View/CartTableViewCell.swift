@@ -13,7 +13,9 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet var shoeImage: UIImageView!
     @IBOutlet var shoeNameLabel: UILabel!
     @IBOutlet var shoePriceLabel: UILabel!
-
+     @IBOutlet var stepper: UIStepper!
+     @IBOutlet var stepperLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,8 +32,12 @@ class CartTableViewCell: UITableViewCell {
      shoeImage.image = UIImage(named: shoe.imageName)
      shoeNameLabel.text = shoe.title
      shoePriceLabel.text = shoe.price
-     
-    
          
      }
+    @IBAction func stepperPressed(_ sender: UIStepper) {
+        stepperLabel.text = "\(Int(stepper.value))"
+    
+        
+    }
+    
 }
