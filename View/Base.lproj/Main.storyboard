@@ -37,13 +37,13 @@
                                                     <rect key="frame" x="10" y="0.0" width="165" height="67.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converse: Chuck Taylor All Star" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-xu-bxY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="147" height="67.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="67.5"/>
                                                             <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="12"/>
                                                             <color key="textColor" red="0.13425921605952026" green="0.13558851522842641" blue="0.13558851522842641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evg-7r-mrn">
-                                                            <rect key="frame" x="147" y="0.0" width="18" height="67.5"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evg-7r-mrn">
+                                                            <rect key="frame" x="143" y="0.0" width="22" height="67.5"/>
                                                             <color key="tintColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="heart" catalog="system"/>
                                                         </button>
@@ -79,9 +79,11 @@
                                         <color key="backgroundColor" red="0.49411764705882355" green="0.70821208769999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="customSize" width="185" height="238"/>
                                         <connections>
+                                            <outlet property="heartButton" destination="evg-7r-mrn" id="dbP-oO-d5o"/>
                                             <outlet property="priceLabel" destination="GAO-P9-JHy" id="z9H-jH-DQm"/>
                                             <outlet property="shoeImage" destination="uj9-Mq-Lwz" id="YYK-cb-zai"/>
                                             <outlet property="titleLabel" destination="uaY-xu-bxY" id="kJy-U5-EfA"/>
+                                            <segue destination="kQc-rF-a00" kind="presentation" identifier="detailSegue" id="MVp-iQ-aFW"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -100,6 +102,9 @@
                     <navigationItem key="navigationItem" id="Yin-72-HOn">
                         <barButtonItem key="rightBarButtonItem" image="cart" catalog="system" id="kpd-yg-4lL">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="vve-W9-G6j" kind="show" identifier="cartSegue" id="LYL-00-gaZ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -111,57 +116,69 @@
             </objects>
             <point key="canvasLocation" x="-1628.985507246377" y="160.71428571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Description View Controller-->
         <scene sceneID="4IA-ea-gaE">
             <objects>
-                <viewController id="kQc-rF-a00" sceneMemberID="viewController">
+                <viewController id="kQc-rF-a00" customClass="DescriptionViewController" customModule="ShoeShock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aSs-sl-5l7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="7kD-l4-Q9O">
-                                <rect key="frame" x="20" y="108" width="374" height="605"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SD-dQ-5gu">
+                                <rect key="frame" x="20" y="717" width="374" height="42"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.59607843137254901" blue="0.60784313725490191" alpha="0.66481164383561642" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
+                                <state key="normal" title="Add to cart">
+                                    <color key="titleColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2xp-cP-zCW">
+                                <rect key="frame" x="5" y="320" width="404" height="58.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ww-v9-8fu">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="201.5"/>
-                                        <color key="backgroundColor" red="0.49506197969999999" green="0.70821208769999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="XVU-dr-O2n">
-                                        <rect key="frame" x="0.0" y="201.5" width="365" height="202"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Converse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvu-XL-knI">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="202"/>
-                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="32"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$49.95" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNW-sW-6Xo">
-                                                <rect key="frame" x="215" y="0.0" width="150" height="202"/>
-                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="26"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kWf-ny-o3u">
-                                        <rect key="frame" x="0.0" y="403.5" width="362.5" height="201.5"/>
-                                        <string key="text">The Converse Chuck Taylor All Star Low Sneaker is a high-impact statement-maker that will never go out of style. The low-top canvas silhouette, lace-up front, and a vulcanized rubber sole provide a great fit and easy everyday feel. </string>
-                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
-                                        <color key="textColor" red="0.1894630393" green="0.1894630393" blue="0.1894630393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Converse: Chuck Taylor All Star" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvu-XL-knI">
+                                        <rect key="frame" x="0.0" y="0.0" width="202" height="58.5"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$49.95" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNW-sW-6Xo">
+                                        <rect key="frame" x="202" y="0.0" width="202" height="58.5"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="26"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="9Ww-v9-8fu" secondAttribute="trailing" constant="20" id="RGa-vz-R3R"/>
-                                </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kWf-ny-o3u">
+                                <rect key="frame" x="20" y="398.5" width="374" height="298.5"/>
+                                <string key="text">The Converse Chuck Taylor All Star Low Sneaker is a high-impact statement-maker that will never go out of style. The low-top canvas silhouette, lace-up front, and a vulcanized rubber sole provide a great fit and easy everyday feel. </string>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="18"/>
+                                <color key="textColor" red="0.1894630393" green="0.1894630393" blue="0.1894630393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ww-v9-8fu">
+                                <rect key="frame" x="5" y="0.0" width="404" height="300"/>
+                                <color key="backgroundColor" red="0.49506197969999999" green="0.70821208769999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="aGg-aY-deM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="7kD-l4-Q9O" firstAttribute="leading" secondItem="jLx-rR-QDP" secondAttribute="leading" constant="20" id="C66-uT-YmY"/>
-                            <constraint firstItem="jLx-rR-QDP" firstAttribute="bottom" secondItem="7kD-l4-Q9O" secondAttribute="bottom" constant="100" id="L0b-mD-Dad"/>
-                            <constraint firstItem="7kD-l4-Q9O" firstAttribute="top" secondItem="jLx-rR-QDP" secondAttribute="top" constant="20" id="hvg-OC-Txp"/>
-                            <constraint firstAttribute="trailing" secondItem="7kD-l4-Q9O" secondAttribute="trailing" constant="20" id="tWC-A5-UNE"/>
+                            <constraint firstItem="kWf-ny-o3u" firstAttribute="leading" secondItem="jLx-rR-QDP" secondAttribute="leading" constant="20" id="655-cT-a3R"/>
+                            <constraint firstItem="9Ww-v9-8fu" firstAttribute="leading" secondItem="jLx-rR-QDP" secondAttribute="leading" constant="5" id="AUJ-ax-c9D"/>
+                            <constraint firstAttribute="trailing" secondItem="2xp-cP-zCW" secondAttribute="trailing" constant="5" id="M6e-Pw-gGd"/>
+                            <constraint firstItem="kWf-ny-o3u" firstAttribute="top" secondItem="2xp-cP-zCW" secondAttribute="bottom" constant="20" id="Nba-q1-nbi"/>
+                            <constraint firstItem="9Ww-v9-8fu" firstAttribute="top" secondItem="jLx-rR-QDP" secondAttribute="top" id="Rll-Fj-hHc"/>
+                            <constraint firstItem="2xp-cP-zCW" firstAttribute="leading" secondItem="jLx-rR-QDP" secondAttribute="leading" constant="5" id="VWa-CM-1JZ"/>
+                            <constraint firstItem="jLx-rR-QDP" firstAttribute="trailing" secondItem="kWf-ny-o3u" secondAttribute="trailing" constant="20" id="ZzH-KO-8hq"/>
+                            <constraint firstItem="1SD-dQ-5gu" firstAttribute="bottom" secondItem="jLx-rR-QDP" secondAttribute="bottom" id="a1z-6p-zGK"/>
+                            <constraint firstItem="2xp-cP-zCW" firstAttribute="top" secondItem="9Ww-v9-8fu" secondAttribute="bottom" constant="20" id="cI5-dd-mU9"/>
+                            <constraint firstItem="jLx-rR-QDP" firstAttribute="trailing" secondItem="1SD-dQ-5gu" secondAttribute="trailing" constant="20" id="j2U-hD-VQt"/>
+                            <constraint firstItem="1SD-dQ-5gu" firstAttribute="top" secondItem="kWf-ny-o3u" secondAttribute="bottom" constant="20" id="m7O-1i-qPE"/>
+                            <constraint firstItem="1SD-dQ-5gu" firstAttribute="leading" secondItem="jLx-rR-QDP" secondAttribute="leading" constant="20" id="o0w-ng-ehc"/>
+                            <constraint firstItem="jLx-rR-QDP" firstAttribute="trailing" secondItem="9Ww-v9-8fu" secondAttribute="trailing" constant="5" id="rpg-Gs-yVY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jLx-rR-QDP"/>
                     </view>
@@ -172,106 +189,122 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cartButton" destination="1SD-dQ-5gu" id="eDb-yg-mEK"/>
+                        <outlet property="descriptionLabel" destination="kWf-ny-o3u" id="N5C-HD-0iF"/>
+                        <outlet property="priceLabel" destination="tNW-sW-6Xo" id="nBU-cE-2hc"/>
+                        <outlet property="shoeImage" destination="9Ww-v9-8fu" id="IDL-gB-Iht"/>
+                        <outlet property="titleLabel" destination="Nvu-XL-knI" id="dcc-Js-QfE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xix-Ed-lvK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="249.27536231884059" y="152.67857142857142"/>
+            <point key="canvasLocation" x="-607.24637681159425" y="160.71428571428569"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="0Ld-kG-w7I">
+        <!--Table View Controller-->
+        <scene sceneID="gWL-He-ZNb">
             <objects>
-                <tableViewController id="Ad0-pV-Zfp" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j3T-Je-CMb">
+                <viewController id="vve-W9-G6j" customClass="TableViewController" customModule="ShoeShock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3D5-Ej-fdZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iEE-MQ-wGm">
+                                <rect key="frame" x="0.0" y="88" width="414" height="675"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BZu-ob-MZE">
+                                    <rect key="frame" x="0.0" y="246" width="414" height="51"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.8980392157" green="0.59607843140000005" blue="0.60784313729999995" alpha="0.66481164380000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                    <state key="normal" title="Purchase">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="190" id="OML-yb-Xza" customClass="CartTableViewCell" customModule="ShoeShock" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="190"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OML-yb-Xza" id="K26-OV-6W1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Jq-Tj-ebC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="185"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="tdN-u3-TCc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="217" height="185"/>
+                                                            <color key="backgroundColor" red="0.6486274823" green="0.65949387400000004" blue="0.71511861219999995" alpha="0.46438891267123289" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="185" id="9hN-Cc-U5P"/>
+                                                                <constraint firstAttribute="width" constant="217" id="vVm-P4-hZD"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="3ZM-E0-td9">
+                                                            <rect key="frame" x="225" y="0.0" width="189" height="185"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converse: Chuck Taylor All Star" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9d-JQ-9BY">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="158.5" height="71.5"/>
+                                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="19"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$49.95" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84c-6j-XDN">
+                                                                    <rect key="frame" x="0.0" y="97.5" width="75" height="29.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="29.5" id="jdM-lO-Lhs"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="itx-AQ-jXx">
+                                                                    <rect key="frame" x="0.0" y="153" width="94" height="32"/>
+                                                                </stepper>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="tdN-u3-TCc" firstAttribute="leading" secondItem="9Jq-Tj-ebC" secondAttribute="leading" id="MNi-ye-ovR"/>
+                                                        <constraint firstItem="3ZM-E0-td9" firstAttribute="leading" secondItem="tdN-u3-TCc" secondAttribute="trailing" constant="8" id="TR2-7x-oF4"/>
+                                                        <constraint firstItem="tdN-u3-TCc" firstAttribute="top" secondItem="9Jq-Tj-ebC" secondAttribute="top" id="icS-AD-UY9"/>
+                                                        <constraint firstAttribute="bottom" secondItem="tdN-u3-TCc" secondAttribute="bottom" id="xHJ-BM-wb1"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9Jq-Tj-ebC" firstAttribute="top" secondItem="K26-OV-6W1" secondAttribute="top" id="FGh-DQ-hRs"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Jq-Tj-ebC" secondAttribute="trailing" id="LOD-iY-f35"/>
+                                                <constraint firstAttribute="bottom" secondItem="9Jq-Tj-ebC" secondAttribute="bottom" constant="5" id="Zbn-be-99c"/>
+                                                <constraint firstItem="9Jq-Tj-ebC" firstAttribute="leading" secondItem="K26-OV-6W1" secondAttribute="leading" id="t2K-LO-qW6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="shoeImage" destination="tdN-u3-TCc" id="raM-p3-sTW"/>
+                                            <outlet property="shoeNameLabel" destination="g9d-JQ-9BY" id="4ti-h6-Ql6"/>
+                                            <outlet property="shoePriceLabel" destination="84c-6j-XDN" id="f58-Nc-wXe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BZu-ob-MZE">
-                            <rect key="frame" x="0.0" y="246" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
-                            <state key="normal" title="Purchase">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                        </button>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="190" id="OML-yb-Xza">
-                                <rect key="frame" x="0.0" y="28" width="414" height="190"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OML-yb-Xza" id="K26-OV-6W1">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="tdN-u3-TCc">
-                                            <rect key="frame" x="20" y="11" width="173" height="168"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.6486274823" green="0.65949387400000004" blue="0.71511861219999995" alpha="0.46438891267123289" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Converse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9d-JQ-9BY">
-                                            <rect key="frame" x="239" y="65" width="73" height="23"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$49.95" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84c-6j-XDN">
-                                            <rect key="frame" x="239" y="94" width="75" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="itx-AQ-jXx">
-                                            <rect key="frame" x="227" y="137" width="94" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </stepper>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Ad0-pV-Zfp" id="1wd-ec-jG5"/>
-                            <outlet property="delegate" destination="Ad0-pV-Zfp" id="bLz-dw-QhI"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="vvz-G2-cha"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DQx-CJ-T0m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1368.1159420289855" y="160.71428571428569"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="CRR-h8-o9z">
-            <objects>
-                <viewController id="1YP-FL-ky7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="moF-Aj-wWL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="8cF-mn-HMS"/>
+                        <constraints>
+                            <constraint firstItem="guO-vO-xxS" firstAttribute="bottom" secondItem="iEE-MQ-wGm" secondAttribute="bottom" constant="50" id="Kg0-lk-bk5"/>
+                            <constraint firstItem="iEE-MQ-wGm" firstAttribute="top" secondItem="guO-vO-xxS" secondAttribute="top" id="Yt2-Wz-8Ms"/>
+                            <constraint firstItem="iEE-MQ-wGm" firstAttribute="leading" secondItem="guO-vO-xxS" secondAttribute="leading" id="xSV-IR-kGa"/>
+                            <constraint firstItem="guO-vO-xxS" firstAttribute="trailing" secondItem="iEE-MQ-wGm" secondAttribute="trailing" id="yLf-gd-2Ig"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="guO-vO-xxS"/>
                     </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZwT-eO-cAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2194.202898550725" y="175.44642857142856"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="LaK-jd-Wr0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NHg-Kf-1qH" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5gd-Fh-fpN">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                    <navigationItem key="navigationItem" id="edh-SP-Q6S"/>
                     <connections>
-                        <segue destination="kQc-rF-a00" kind="relationship" relationship="rootViewController" id="pkt-4l-Qfz"/>
+                        <outlet property="cartTable" destination="iEE-MQ-wGm" id="oBe-4M-XMf"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aEK-oq-Pcs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dnP-rx-p8s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-660.86956521739137" y="152.67857142857142"/>
+            <point key="canvasLocation" x="-1630.4347826086957" y="947.54464285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M9o-VE-LsG">

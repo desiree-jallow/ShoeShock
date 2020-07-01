@@ -9,11 +9,36 @@
 import UIKit
 
 class DescriptionViewController: UIViewController {
+    
+    var backgroundColor: UIColor?
+    var titleText: String?
+    var price: String?
+    var descriptionText: String?
+    var shoeImageName: String?
+    
+    
+    @IBOutlet var shoeImage: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var cartButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        shoeImage.image = UIImage(named: "\(shoeImageName ?? " ")")
+        titleLabel.text = titleText
+        priceLabel.text = price
+        descriptionLabel.text = descriptionText
+        shoeImage.backgroundColor = backgroundColor
+        cartButton.backgroundColor = backgroundColor
+        
+    }
+    
+    @IBAction func cartButtonPressed(_ sender: UIButton) {
+        
+        
     }
     
 

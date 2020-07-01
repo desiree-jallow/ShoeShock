@@ -8,14 +8,29 @@
 
 import UIKit
 
-class TableViewController: UIViewController {
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
+    
+    @IBOutlet var cartTable: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        cartTable.delegate = self
+        cartTable.dataSource = self
     }
     
+      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cartShoes.count
+      }
+      
+      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = cartTable.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! CartTableViewCell
+        let shoe = cartShoes[indexPath.row]
+        cell.updateViews(shoe: shoe)
+        return cell
+        
+    }
 
     /*
     // MARK: - Navigation

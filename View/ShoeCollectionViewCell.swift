@@ -14,17 +14,19 @@ class ShoeCollectionViewCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var shoeImage: UIImageView!
-    
+    @IBOutlet var heartButton: UIButton!
+   
     
     func updateViews(shoe: Shoe) {
     shoeImage.image = UIImage(named: shoe.imageName)
     titleLabel.text = shoe.title
     priceLabel.text = shoe.price
     backgroundColor = shoe.backgroundColor
+   
         
     }
     
-    
+  
     
     
 }

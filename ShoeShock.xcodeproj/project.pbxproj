@@ -17,6 +17,8 @@
 		D72CF8FA24AA63D300F5F370 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72CF8F924AA63D300F5F370 /* TableViewController.swift */; };
 		D72CF90024AA677800F5F370 /* ShoeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72CF8FF24AA677800F5F370 /* ShoeCollectionViewCell.swift */; };
 		D72CF90224AA69D400F5F370 /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72CF90124AA69D400F5F370 /* Shoe.swift */; };
+		D731822F24ABA9FD00CD52D8 /* MyShoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731822E24ABA9FD00CD52D8 /* MyShoes.swift */; };
+		D75D4F4924ACD53A00195B1D /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75D4F4824ACD53A00195B1D /* CartTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		D72CF8F924AA63D300F5F370 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D72CF8FF24AA677800F5F370 /* ShoeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D72CF90124AA69D400F5F370 /* Shoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
+		D731822E24ABA9FD00CD52D8 /* MyShoes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShoes.swift; sourceTree = "<group>"; };
+		D75D4F4824ACD53A00195B1D /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 			children = (
 				D7296B0624A674B3003A8384 /* Main.storyboard */,
 				D72CF8FF24AA677800F5F370 /* ShoeCollectionViewCell.swift */,
+				D75D4F4824ACD53A00195B1D /* CartTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				D72CF90124AA69D400F5F370 /* Shoe.swift */,
+				D731822E24ABA9FD00CD52D8 /* MyShoes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,8 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D731822F24ABA9FD00CD52D8 /* MyShoes.swift in Sources */,
 				D7296B0524A674B3003A8384 /* CollectionViewController.swift in Sources */,
 				D72CF8F824AA639E00F5F370 /* DescriptionViewController.swift in Sources */,
+				D75D4F4924ACD53A00195B1D /* CartTableViewCell.swift in Sources */,
 				D72CF90224AA69D400F5F370 /* Shoe.swift in Sources */,
 				D72CF90024AA677800F5F370 /* ShoeCollectionViewCell.swift in Sources */,
 				D7296B0124A674B3003A8384 /* AppDelegate.swift in Sources */,
