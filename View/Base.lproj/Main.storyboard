@@ -37,13 +37,13 @@
                                                     <rect key="frame" x="10" y="0.0" width="165" height="67.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converse: Chuck Taylor All Star" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-xu-bxY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="67.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="147" height="67.5"/>
                                                             <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="12"/>
                                                             <color key="textColor" red="0.13425921605952026" green="0.13558851522842641" blue="0.13558851522842641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evg-7r-mrn">
-                                                            <rect key="frame" x="143" y="0.0" width="22" height="67.5"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evg-7r-mrn">
+                                                            <rect key="frame" x="147" y="0.0" width="18" height="67.5"/>
                                                             <color key="tintColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" image="heart" catalog="system"/>
                                                         </button>
@@ -259,7 +259,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="vlK-eX-tr0">
-                                                                    <rect key="frame" x="0.0" y="148" width="126" height="32"/>
+                                                                    <rect key="frame" x="0.0" y="148" width="168" height="32"/>
                                                                     <subviews>
                                                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="itx-AQ-jXx">
                                                                             <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
@@ -267,8 +267,8 @@
                                                                                 <action selector="stepperPressed:" destination="OML-yb-Xza" eventType="touchUpInside" id="85Y-Sy-hIA"/>
                                                                             </connections>
                                                                         </stepper>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ1-MY-xlc">
-                                                                            <rect key="frame" x="118" y="0.0" width="8" height="32"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ1-MY-xlc">
+                                                                            <rect key="frame" x="118" y="0.0" width="50" height="32"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>

@@ -32,12 +32,11 @@ class CartTableViewCell: UITableViewCell {
      shoeImage.image = UIImage(named: shoe.imageName)
      shoeNameLabel.text = shoe.title
      shoePriceLabel.text = shoe.price
+     stepperLabel.text = String(Int(stepper.value))
          
      }
     @IBAction func stepperPressed(_ sender: UIStepper) {
-        stepperLabel.text = "\(Int(stepper.value))"
-    
-        
+     stepperLabel.text = "\(Int(stepper.value))"
     }
     
 }

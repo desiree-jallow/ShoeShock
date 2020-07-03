@@ -12,11 +12,13 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     
     @IBOutlet var collectionView: UICollectionView!
+    var favorites = [Int]()
   
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        
     
     }
     
@@ -32,33 +34,45 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
               
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! ShoeCollectionViewCell
             let shoe = myShoes[indexPath.row]
-            cell.updateViews(shoe: shoe)
             cell.layer.cornerRadius = 8
             cell.heartButton.addTarget(self, action: #selector(heartButtonPressed), for: .touchUpInside)
+        if favorites.contains(indexPath.row) {
+            cell.heartButton.isSelected = true
+        }
             cell.heartButton.tag = indexPath.row
+            cell.updateViews(shoe: shoe)
             return cell
-            
+        
           }
-    
+
     @objc func heartButtonPressed(_ sender: UIButton) {
+        
         let indexPathRow = sender.tag
         let shoe = myShoes[indexPathRow]
         let index = cartShoes.firstIndex(of: shoe)
-        if sender.currentImage == UIImage(systemName: "heart.fill") {
-              sender.setImage(UIImage(systemName: "heart"), for: .normal)
-            cartShoes.remove(at: index ?? 0)
-          } else {
-              sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                cartShoes.append(shoe)
-            
+
+        if sender.isSelected {
+            sender.isSelected = false
+            favorites.remove(at: indexPathRow)
+                if !cartShoes.isEmpty {
+                cartShoes.remove(at: index ?? 0)
+              
           }
+            
+        } else {
+                sender.isSelected = true
+                cartShoes.append(shoe)
+                favorites.append(indexPathRow)
+        }
+        
     }
-    
-    
+
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let shoe = myShoes[indexPath.row]
         performSegue(withIdentifier: "detailSegue", sender: shoe)
+
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,7 +82,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                         
                       if let cell = sender as? ShoeCollectionViewCell {
                         if let indexPath = collectionView.indexPath(for: cell) {
-                               let shoe = myShoes[indexPath.row]
+                            let shoe = myShoes[indexPath.row]
                                
                     descriptionViewController.descriptionText = shoe.description
                     descriptionViewController.price = shoe.price

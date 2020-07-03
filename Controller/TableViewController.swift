@@ -25,25 +25,30 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cartShoes.count
       }
     
-    //figure out how to delete row when stepper == 0
+
       
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cartTable.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! CartTableViewCell
         let shoe = cartShoes[indexPath.row]
-        cell.stepper.tag = indexPath.row
-        if cell.stepper.value == 0 {
-            cartShoes.remove(at: indexPath.row)
-//            let indexPath = IndexPath(row: indexPath.row, section: 1)
-            cartTable.deleteRows(at: [indexPath], with: .automatic)
+            cell.updateViews(shoe: shoe)
+            cell.stepper.addTarget(self, action: #selector(stepperPressed(_:)), for: .touchUpInside)
+              return cell
+        
+    }
+    
+    @objc func stepperPressed(_ sender: UIStepper) {
+        if sender.value < 1 {
+            let indexPathRow = sender.tag
+            let shoe = myShoes[indexPathRow]
+            let index = cartShoes.firstIndex(of: shoe)
+            cartShoes.remove(at: index ?? 0)
+            cartTable.reloadData()
+            
         }
-        cell.updateViews(shoe: shoe)
-        return cell
         
     }
     
     
-    
-
     /*
     // MARK: - Navigation
 
