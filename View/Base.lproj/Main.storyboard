@@ -259,7 +259,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="vlK-eX-tr0">
-                                                                    <rect key="frame" x="0.0" y="148" width="168" height="32"/>
+                                                                    <rect key="frame" x="0.0" y="148" width="126" height="32"/>
                                                                     <subviews>
                                                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="itx-AQ-jXx">
                                                                             <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
@@ -267,8 +267,8 @@
                                                                                 <action selector="stepperPressed:" destination="OML-yb-Xza" eventType="touchUpInside" id="85Y-Sy-hIA"/>
                                                                             </connections>
                                                                         </stepper>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ1-MY-xlc">
-                                                                            <rect key="frame" x="118" y="0.0" width="50" height="32"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ1-MY-xlc">
+                                                                            <rect key="frame" x="118" y="0.0" width="8" height="32"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>

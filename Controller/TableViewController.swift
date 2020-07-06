@@ -24,28 +24,30 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cartShoes.count
       }
-    
 
-      
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cartTable.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! CartTableViewCell
         let shoe = cartShoes[indexPath.row]
-            cell.updateViews(shoe: shoe)
+            cell.stepper.tag = indexPath.row
+            
             cell.stepper.addTarget(self, action: #selector(stepperPressed(_:)), for: .touchUpInside)
-              return cell
+            
+            cell.updateViews(shoe: shoe)
+        
+        return cell
         
     }
     
     @objc func stepperPressed(_ sender: UIStepper) {
-        if sender.value < 1 {
+        if sender.value == 0 {
             let indexPathRow = sender.tag
-            let shoe = myShoes[indexPathRow]
-            let index = cartShoes.firstIndex(of: shoe)
-            cartShoes.remove(at: index ?? 0)
-            cartTable.reloadData()
-            
+            let shoe = cartShoes[indexPathRow]
+
+            if let index = cartShoes.firstIndex(of: shoe) {
+                cartShoes.remove(at: index)
+                cartTable.reloadData()
+            }
         }
-        
     }
     
     

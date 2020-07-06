@@ -22,13 +22,13 @@ class ShoeCollectionViewCell: UICollectionViewCell {
     titleLabel.text = shoe.title
     priceLabel.text = shoe.price
     backgroundColor = shoe.backgroundColor
-        heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        heartButton.setImage(UIImage(systemName: "heart.fill"), for: .selected)
-   
-        
+    heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
+    heartButton.setImage(UIImage(systemName: "heart.fill"), for: .selected)
+        if favorites.contains(shoe) {
+            heartButton.isSelected = true
+        } else {
+            heartButton.isSelected = false
+        }
     }
-    
-  
-    
     
 }

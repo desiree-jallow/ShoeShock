@@ -33,10 +33,10 @@ class CartTableViewCell: UITableViewCell {
      shoeNameLabel.text = shoe.title
      shoePriceLabel.text = shoe.price
      stepperLabel.text = String(Int(stepper.value))
-         
+        
      }
+    
     @IBAction func stepperPressed(_ sender: UIStepper) {
      stepperLabel.text = "\(Int(stepper.value))"
     }
-    
 }

@@ -36,10 +36,6 @@ class DescriptionViewController: UIViewController {
         
     }
     
-    @IBAction func cartButtonPressed(_ sender: UIButton) {
-        
-        
-    }
     
 
     /*

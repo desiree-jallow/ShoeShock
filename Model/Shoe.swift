@@ -13,15 +13,15 @@ struct Shoe: Equatable {
     var imageName: String
     var description: String
     var backgroundColor: UIColor
-    var heartIsSelected: Bool
     
-    init(title: String, price: String, imageName: String, description: String, backgroundColor: UIColor, heartIsSelected: Bool) {
+    
+    init(title: String, price: String, imageName: String, description: String, backgroundColor: UIColor) {
         self.title = title
         self.price = price
         self.imageName = imageName
         self.description = description
         self.backgroundColor = backgroundColor
-        self.heartIsSelected = heartIsSelected
+        
     }
     
 }
