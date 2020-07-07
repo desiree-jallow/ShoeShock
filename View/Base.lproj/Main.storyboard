@@ -210,17 +210,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iEE-MQ-wGm">
-                                <rect key="frame" x="0.0" y="88" width="414" height="675"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="575"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BZu-ob-MZE">
-                                    <rect key="frame" x="0.0" y="246" width="414" height="51"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.8980392157" green="0.59607843140000005" blue="0.60784313729999995" alpha="0.66481164380000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
-                                    <state key="normal" title="Purchase">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="190" id="OML-yb-Xza" customClass="CartTableViewCell" customModule="ShoeShock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="190"/>
@@ -297,10 +288,51 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" id="03n-K4-nod">
+                                <rect key="frame" x="0.0" y="682" width="414" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="290" translatesAutoresizingMaskIntoConstraints="NO" id="mDJ-wQ-XPJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="26.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wj-LH-X4R">
+                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="20"/>
+                                                <color key="textColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CW-u4-8Zu">
+                                                <rect key="frame" x="347.5" y="0.0" width="66.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="20"/>
+                                                <color key="textColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXN-B9-V1e">
+                                        <rect key="frame" x="0.0" y="46.5" width="414" height="69.5"/>
+                                        <color key="backgroundColor" red="0.8980392157" green="0.59607843140000005" blue="0.60784313729999995" alpha="0.66481164380000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                        <state key="normal" title="Purchse">
+                                            <color key="titleColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="ZXN-B9-V1e" firstAttribute="leading" secondItem="03n-K4-nod" secondAttribute="leading" id="24M-4t-5S1"/>
+                                    <constraint firstAttribute="trailing" secondItem="mDJ-wQ-XPJ" secondAttribute="trailing" id="Jz5-lo-8xe"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZXN-B9-V1e" secondAttribute="bottom" id="Tqb-MC-XXb"/>
+                                    <constraint firstItem="ZXN-B9-V1e" firstAttribute="top" secondItem="mDJ-wQ-XPJ" secondAttribute="bottom" constant="20" id="UWQ-g1-Tdv"/>
+                                    <constraint firstItem="mDJ-wQ-XPJ" firstAttribute="top" secondItem="03n-K4-nod" secondAttribute="top" id="b3W-w9-sTk"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZXN-B9-V1e" secondAttribute="trailing" id="uTF-H0-lGh"/>
+                                    <constraint firstItem="mDJ-wQ-XPJ" firstAttribute="leading" secondItem="03n-K4-nod" secondAttribute="leading" id="ujv-1B-NQn"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="guO-vO-xxS" firstAttribute="bottom" secondItem="iEE-MQ-wGm" secondAttribute="bottom" constant="50" id="Kg0-lk-bk5"/>
+                            <constraint firstItem="guO-vO-xxS" firstAttribute="bottom" secondItem="iEE-MQ-wGm" secondAttribute="bottom" constant="150" id="Kg0-lk-bk5"/>
                             <constraint firstItem="iEE-MQ-wGm" firstAttribute="top" secondItem="guO-vO-xxS" secondAttribute="top" id="Yt2-Wz-8Ms"/>
                             <constraint firstItem="iEE-MQ-wGm" firstAttribute="leading" secondItem="guO-vO-xxS" secondAttribute="leading" id="xSV-IR-kGa"/>
                             <constraint firstItem="guO-vO-xxS" firstAttribute="trailing" secondItem="iEE-MQ-wGm" secondAttribute="trailing" id="yLf-gd-2Ig"/>
