@@ -289,33 +289,36 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" id="03n-K4-nod">
-                                <rect key="frame" x="0.0" y="682" width="414" height="116"/>
+                                <rect key="frame" x="0.0" y="709" width="414" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="290" translatesAutoresizingMaskIntoConstraints="NO" id="mDJ-wQ-XPJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="26.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="218" translatesAutoresizingMaskIntoConstraints="NO" id="mDJ-wQ-XPJ">
+                                        <rect key="frame" x="0.0" y="20" width="414" height="26.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wj-LH-X4R">
-                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="26.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="TOTAL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wj-LH-X4R">
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="26.5"/>
                                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="20"/>
                                                 <color key="textColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CW-u4-8Zu">
-                                                <rect key="frame" x="347.5" y="0.0" width="66.5" height="26.5"/>
-                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CW-u4-8Zu">
+                                                <rect key="frame" x="316" y="0.0" width="98" height="26.5"/>
+                                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
                                                 <color key="textColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXN-B9-V1e">
-                                        <rect key="frame" x="0.0" y="46.5" width="414" height="69.5"/>
+                                        <rect key="frame" x="0.0" y="46.5" width="414" height="42.5"/>
                                         <color key="backgroundColor" red="0.8980392157" green="0.59607843140000005" blue="0.60784313729999995" alpha="0.66481164380000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
                                         <state key="normal" title="Purchse">
                                             <color key="titleColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="purchaseButtonPressed:" destination="vve-W9-G6j" eventType="touchUpInside" id="RXe-Ff-4mq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -323,8 +326,8 @@
                                     <constraint firstItem="ZXN-B9-V1e" firstAttribute="leading" secondItem="03n-K4-nod" secondAttribute="leading" id="24M-4t-5S1"/>
                                     <constraint firstAttribute="trailing" secondItem="mDJ-wQ-XPJ" secondAttribute="trailing" id="Jz5-lo-8xe"/>
                                     <constraint firstAttribute="bottom" secondItem="ZXN-B9-V1e" secondAttribute="bottom" id="Tqb-MC-XXb"/>
-                                    <constraint firstItem="ZXN-B9-V1e" firstAttribute="top" secondItem="mDJ-wQ-XPJ" secondAttribute="bottom" constant="20" id="UWQ-g1-Tdv"/>
-                                    <constraint firstItem="mDJ-wQ-XPJ" firstAttribute="top" secondItem="03n-K4-nod" secondAttribute="top" id="b3W-w9-sTk"/>
+                                    <constraint firstItem="ZXN-B9-V1e" firstAttribute="top" secondItem="mDJ-wQ-XPJ" secondAttribute="bottom" id="UWQ-g1-Tdv"/>
+                                    <constraint firstItem="mDJ-wQ-XPJ" firstAttribute="top" secondItem="03n-K4-nod" secondAttribute="top" constant="20" id="b3W-w9-sTk"/>
                                     <constraint firstAttribute="trailing" secondItem="ZXN-B9-V1e" secondAttribute="trailing" id="uTF-H0-lGh"/>
                                     <constraint firstItem="mDJ-wQ-XPJ" firstAttribute="leading" secondItem="03n-K4-nod" secondAttribute="leading" id="ujv-1B-NQn"/>
                                 </constraints>
@@ -342,6 +345,7 @@
                     <navigationItem key="navigationItem" id="edh-SP-Q6S"/>
                     <connections>
                         <outlet property="cartTable" destination="iEE-MQ-wGm" id="oBe-4M-XMf"/>
+                        <outlet property="totalPriceLabel" destination="5CW-u4-8Zu" id="gir-Pz-20s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnP-rx-p8s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -18,7 +18,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,13 +31,12 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           
            return myShoes.count
-          }
+    }
     
           
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+    
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! ShoeCollectionViewCell
         
             let shoe = myShoes[indexPath.row]
@@ -52,8 +50,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             cell.updateViews(shoe: shoe)
         
             return cell
-        
-          }
+    }
 
     @objc func heartButtonPressed(_ sender: UIButton) {
         
@@ -86,13 +83,12 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
          if segue.identifier == "detailSegue" {
                     
             if let descriptionViewController = segue.destination as? DescriptionViewController {
-                        
                       if let cell = sender as? ShoeCollectionViewCell {
                         if let indexPath = collectionView.indexPath(for: cell) {
                             let shoe = myShoes[indexPath.row]
                                
                     descriptionViewController.descriptionText = shoe.description
-                    descriptionViewController.price = shoe.price
+                    descriptionViewController.price = String(format: "$%.2f", shoe.price)
                     descriptionViewController.shoeImageName = shoe.imageName
                     descriptionViewController.backgroundColor = shoe.backgroundColor
                     descriptionViewController.titleText = shoe.title
@@ -101,8 +97,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
            }
        }
     }
-    
-    
 }
 
 

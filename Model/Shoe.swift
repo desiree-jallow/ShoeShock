@@ -9,15 +9,18 @@
 import UIKit
 struct Shoe: Equatable {
     var title: String
-    var price: String
+    var price: Double
     var imageName: String
     var description: String
     var backgroundColor: UIColor
     var value: Double
+    var total: Double {
+        price * value
+    }
     
     
     
-    init(title: String, price: String, imageName: String, description: String, backgroundColor: UIColor, value: Double) {
+    init(title: String, price: Double, imageName: String, description: String, backgroundColor: UIColor, value: Double, total: Double) {
         self.title = title
         self.price = price
         self.imageName = imageName

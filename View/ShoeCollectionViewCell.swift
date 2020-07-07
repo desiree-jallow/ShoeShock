@@ -20,7 +20,7 @@ class ShoeCollectionViewCell: UICollectionViewCell {
     func updateViews(shoe: Shoe) {
     shoeImage.image = UIImage(named: shoe.imageName)
     titleLabel.text = shoe.title
-    priceLabel.text = shoe.price
+        priceLabel.text = String(format: "$%.2f", shoe.price)
     backgroundColor = shoe.backgroundColor
     heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
     heartButton.setImage(UIImage(systemName: "heart.fill"), for: .selected)

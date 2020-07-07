@@ -13,8 +13,8 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet var shoeImage: UIImageView!
     @IBOutlet var shoeNameLabel: UILabel!
     @IBOutlet var shoePriceLabel: UILabel!
-     @IBOutlet var stepper: UIStepper!
-     @IBOutlet var stepperLabel: UILabel!
+    @IBOutlet var stepper: UIStepper!
+    @IBOutlet var stepperLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,9 +31,9 @@ class CartTableViewCell: UITableViewCell {
      func updateViews(shoe: Shoe) {
         shoeImage.image = UIImage(named: shoe.imageName)
         shoeNameLabel.text = shoe.title
-        shoePriceLabel.text = shoe.price
+        shoePriceLabel.text = String(format: "$%.2f", shoe.price)
         stepperLabel.text = String(Int(shoe.value))
-     }
+    }
     
     @IBAction func stepperPressed(_ sender: UIStepper) {
         let indexPathRow = sender.tag
