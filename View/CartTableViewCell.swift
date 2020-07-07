@@ -29,14 +29,16 @@ class CartTableViewCell: UITableViewCell {
     
        
      func updateViews(shoe: Shoe) {
-     shoeImage.image = UIImage(named: shoe.imageName)
-     shoeNameLabel.text = shoe.title
-     shoePriceLabel.text = shoe.price
-     stepperLabel.text = String(Int(stepper.value))
-        
+        shoeImage.image = UIImage(named: shoe.imageName)
+        shoeNameLabel.text = shoe.title
+        shoePriceLabel.text = shoe.price
+        stepperLabel.text = String(Int(shoe.value))
      }
     
     @IBAction func stepperPressed(_ sender: UIStepper) {
-     stepperLabel.text = "\(Int(stepper.value))"
+        let indexPathRow = sender.tag
+        var shoe = cartShoes[indexPathRow]
+        shoe.value = sender.value
+        stepperLabel.text = "\(Int(shoe.value))"
     }
 }

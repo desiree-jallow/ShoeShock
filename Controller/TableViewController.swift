@@ -29,23 +29,22 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = cartTable.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! CartTableViewCell
         let shoe = cartShoes[indexPath.row]
             cell.stepper.tag = indexPath.row
-            
             cell.stepper.addTarget(self, action: #selector(stepperPressed(_:)), for: .touchUpInside)
-            
             cell.updateViews(shoe: shoe)
-        
+            cell.stepper.value = shoe.value
         return cell
         
     }
     
     @objc func stepperPressed(_ sender: UIStepper) {
-        if sender.value == 0 {
-            let indexPathRow = sender.tag
-            let shoe = cartShoes[indexPathRow]
-
+        
+        let indexPathRow = sender.tag
+        let shoe = cartShoes[indexPathRow]
             if let index = cartShoes.firstIndex(of: shoe) {
-                cartShoes.remove(at: index)
-                cartTable.reloadData()
+                cartShoes[index].value = sender.value
+                    if sender.value == 0 {
+                        cartShoes.remove(at: index)
+                        cartTable.reloadData()
             }
         }
     }
