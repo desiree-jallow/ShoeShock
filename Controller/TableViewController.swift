@@ -61,15 +61,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            let destinationVC = segue.destination as! PurchaseViewController
+            let TotalPrice = cartShoes.reduce(0.0) {$0 + $1.total}
+            destinationVC.total = String(format: "$%.2f", TotalPrice)
     }
-    */
-
 }

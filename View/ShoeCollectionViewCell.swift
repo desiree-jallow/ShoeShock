@@ -30,5 +30,4 @@ class ShoeCollectionViewCell: UICollectionViewCell {
             heartButton.isSelected = false
         }
     }
-    
 }

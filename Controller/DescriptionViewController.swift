@@ -15,6 +15,7 @@ class DescriptionViewController: UIViewController {
     var price: String?
     var descriptionText: String?
     var shoeImageName: String?
+    var shoe: Shoe?
     
     
     @IBOutlet var shoeImage: UIImageView!
@@ -37,15 +38,12 @@ class DescriptionViewController: UIViewController {
     }
     
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func cartButtonPressed(_ sender: UIButton) {
+        if let shoe = shoe {
+            if !cartShoes.contains(shoe) && !favorites.contains(shoe) {
+                cartShoes.append(shoe)
+                favorites.append(shoe)
+            }
+        }
     }
-    */
-
 }

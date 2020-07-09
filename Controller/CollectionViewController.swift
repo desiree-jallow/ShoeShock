@@ -36,18 +36,14 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
           
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! ShoeCollectionViewCell
         
             let shoe = myShoes[indexPath.row]
+                cell.layer.cornerRadius = 8
+                cell.heartButton.addTarget(self, action: #selector(heartButtonPressed), for: .touchUpInside)
         
-            cell.layer.cornerRadius = 8
-        
-            cell.heartButton.addTarget(self, action: #selector(heartButtonPressed), for: .touchUpInside)
-            
-            cell.heartButton.tag = indexPath.row
-        
-            cell.updateViews(shoe: shoe)
+                cell.heartButton.tag = indexPath.row
+                cell.updateViews(shoe: shoe)
         
             return cell
     }
@@ -61,24 +57,20 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             sender.isSelected = false
                 
             if !cartShoes.isEmpty && !favorites.isEmpty {
-                if let index = cartShoes.firstIndex(of: shoe) {                    cartShoes.remove(at: index)
-                    favorites.remove(at: index)
-                }
+                guard let index = cartShoes.firstIndex(of: shoe) else { return}
+                cartShoes.remove(at: index)
+                favorites.remove(at: index)
             }
             
         } else {
                 sender.isSelected = true
+            if !cartShoes.contains(shoe) && !favorites.contains(shoe) {
                 cartShoes.append(shoe)
                 favorites.append(shoe)
+            }
         }
     }
 
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         let shoe = myShoes[indexPath.row]
-        performSegue(withIdentifier: "detailSegue", sender: shoe)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          if segue.identifier == "detailSegue" {
                     
@@ -92,6 +84,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                     descriptionViewController.shoeImageName = shoe.imageName
                     descriptionViewController.backgroundColor = shoe.backgroundColor
                     descriptionViewController.titleText = shoe.title
+                    descriptionViewController.shoe = shoe
                   }
                }
            }

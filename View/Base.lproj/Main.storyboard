@@ -83,7 +83,7 @@
                                             <outlet property="priceLabel" destination="GAO-P9-JHy" id="z9H-jH-DQm"/>
                                             <outlet property="shoeImage" destination="uj9-Mq-Lwz" id="YYK-cb-zai"/>
                                             <outlet property="titleLabel" destination="uaY-xu-bxY" id="kJy-U5-EfA"/>
-                                            <segue destination="kQc-rF-a00" kind="presentation" identifier="detailSegue" id="MVp-iQ-aFW"/>
+                                            <segue destination="kQc-rF-a00" kind="show" identifier="detailSegue" id="MVp-iQ-aFW"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -121,19 +121,23 @@
             <objects>
                 <viewController id="kQc-rF-a00" customClass="DescriptionViewController" customModule="ShoeShock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aSs-sl-5l7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SD-dQ-5gu">
-                                <rect key="frame" x="20" y="717" width="374" height="42"/>
+                                <rect key="frame" x="20" y="771" width="374" height="42"/>
                                 <color key="backgroundColor" red="0.89803921568627454" green="0.59607843137254901" blue="0.60784313725490191" alpha="0.66481164383561642" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
                                 <state key="normal" title="Add to cart">
                                     <color key="titleColor" red="0.1342592161" green="0.13558851520000001" blue="0.13558851520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="cartButtonPressed:" destination="kQc-rF-a00" eventType="touchUpInside" id="j2o-F2-Zhb"/>
+                                    <segue destination="vve-W9-G6j" kind="show" identifier="addToCartSegue" id="NYZ-0h-Sps"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2xp-cP-zCW">
-                                <rect key="frame" x="5" y="320" width="404" height="58.5"/>
+                                <rect key="frame" x="5" y="408" width="404" height="58.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Converse: Chuck Taylor All Star" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvu-XL-knI">
                                         <rect key="frame" x="0.0" y="0.0" width="202" height="58.5"/>
@@ -150,14 +154,14 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kWf-ny-o3u">
-                                <rect key="frame" x="20" y="398.5" width="374" height="298.5"/>
+                                <rect key="frame" x="20" y="486.5" width="374" height="264.5"/>
                                 <string key="text">The Converse Chuck Taylor All Star Low Sneaker is a high-impact statement-maker that will never go out of style. The low-top canvas silhouette, lace-up front, and a vulcanized rubber sole provide a great fit and easy everyday feel. </string>
                                 <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="18"/>
                                 <color key="textColor" red="0.1894630393" green="0.1894630393" blue="0.1894630393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ww-v9-8fu">
-                                <rect key="frame" x="5" y="0.0" width="404" height="300"/>
+                                <rect key="frame" x="5" y="88" width="404" height="300"/>
                                 <color key="backgroundColor" red="0.49506197969999999" green="0.70821208769999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="aGg-aY-deM"/>
@@ -318,6 +322,7 @@
                                         </state>
                                         <connections>
                                             <action selector="purchaseButtonPressed:" destination="vve-W9-G6j" eventType="touchUpInside" id="RXe-Ff-4mq"/>
+                                            <segue destination="ECP-Wc-4ta" kind="show" id="EKR-sx-XQ9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -352,6 +357,52 @@
             </objects>
             <point key="canvasLocation" x="-1630.4347826086957" y="947.54464285714278"/>
         </scene>
+        <!--Purchase View Controller-->
+        <scene sceneID="bKT-bF-PmR">
+            <objects>
+                <viewController id="ECP-Wc-4ta" customClass="PurchaseViewController" customModule="ShoeShock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZO7-sv-IET">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharon-mccutcheon-NkQD-RHhbvY-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="dIG-L7-eig">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase Complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61H-vQ-88x">
+                                <rect key="frame" x="60" y="188" width="294" height="38.5"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORDER TOTAL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64x-Yg-HZe">
+                                <rect key="frame" x="93.5" y="306.5" width="227" height="40"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="64x-Yg-HZe" firstAttribute="top" secondItem="61H-vQ-88x" secondAttribute="bottom" constant="80" id="21U-9j-0C2"/>
+                            <constraint firstItem="8Hm-k1-9sZ" firstAttribute="trailing" secondItem="dIG-L7-eig" secondAttribute="trailing" id="2TS-LA-n66"/>
+                            <constraint firstItem="8Hm-k1-9sZ" firstAttribute="bottom" secondItem="dIG-L7-eig" secondAttribute="bottom" id="4hX-ki-xj3"/>
+                            <constraint firstItem="dIG-L7-eig" firstAttribute="top" secondItem="8Hm-k1-9sZ" secondAttribute="top" id="4tk-pI-aHV"/>
+                            <constraint firstItem="61H-vQ-88x" firstAttribute="top" secondItem="8Hm-k1-9sZ" secondAttribute="top" constant="100" id="NtF-i4-aZJ"/>
+                            <constraint firstItem="61H-vQ-88x" firstAttribute="centerX" secondItem="ZO7-sv-IET" secondAttribute="centerX" id="hDA-up-SaK"/>
+                            <constraint firstItem="64x-Yg-HZe" firstAttribute="centerX" secondItem="ZO7-sv-IET" secondAttribute="centerX" id="neT-xO-OAC"/>
+                            <constraint firstItem="dIG-L7-eig" firstAttribute="leading" secondItem="8Hm-k1-9sZ" secondAttribute="leading" id="wDm-Q9-4IZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Hm-k1-9sZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qmm-XC-QiV"/>
+                    <connections>
+                        <outlet property="totalLabel" destination="64x-Yg-HZe" id="iH2-oc-A8x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOW-jy-mKQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-485.50724637681162" y="951.5625"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="M9o-VE-LsG">
             <objects>
@@ -371,9 +422,13 @@
             <point key="canvasLocation" x="-2539.130434782609" y="160.71428571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NYZ-0h-Sps"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="image_1" width="217" height="127.5"/>
+        <image name="sharon-mccutcheon-NkQD-RHhbvY-unsplash" width="1248" height="1872"/>
     </resources>
 </document>
