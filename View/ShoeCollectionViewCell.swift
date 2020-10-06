@@ -16,11 +16,11 @@ class ShoeCollectionViewCell: UICollectionViewCell {
     @IBOutlet var shoeImage: UIImageView!
     @IBOutlet var heartButton: UIButton!
    
-    
+    //update views based on passed in shoe
     func updateViews(shoe: Shoe) {
     shoeImage.image = UIImage(named: shoe.imageName)
     titleLabel.text = shoe.title
-        priceLabel.text = String(format: "$%.2f", shoe.price)
+    priceLabel.text = String(format: "$%.2f", shoe.price)
     backgroundColor = shoe.backgroundColor
     heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
     heartButton.setImage(UIImage(systemName: "heart.fill"), for: .selected)

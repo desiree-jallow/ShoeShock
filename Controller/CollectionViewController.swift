@@ -8,33 +8,55 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+class CollectionViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     
-  
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
     }
     
+    //check favorites array everytime view appears
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         favorites.removeAll(where: {!cartShoes.contains($0)})
         collectionView.reloadData()
     }
-    
+  
+    //set selected shoe to description view controllers shoe
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.identifier == "detailSegue" {
+                    
+            if let descriptionViewController = segue.destination as? DescriptionViewController {
+                      if let cell = sender as? ShoeCollectionViewCell {
+                        if let indexPath = collectionView.indexPath(for: cell) {
+                            let shoe = myShoes[indexPath.row]
+                            descriptionViewController.shoe = shoe
+                  }
+               }
+           }
+       }
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+extension CollectionViewController: UICollectionViewDelegateFlowLayout {
+    //set size of cells in collection view
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.width/1.75)
     }
+}
+
+//MARK: - UICollectionViewDelegate & UICollectionViewDataSource
+extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
            return myShoes.count
     }
     
-          
+     //populate collection view with every shoe in the myShoes array
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! ShoeCollectionViewCell
         
@@ -47,7 +69,8 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         
             return cell
     }
-
+    
+    //add and remove shoe to and from favorites array when the heart button is pressed
     @objc func heartButtonPressed(_ sender: UIButton) {
         
         let indexPathRow = sender.tag
@@ -57,7 +80,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
             sender.isSelected = false
                 
             if !cartShoes.isEmpty && !favorites.isEmpty {
-                guard let index = cartShoes.firstIndex(of: shoe) else { return}
+                guard let index = cartShoes.firstIndex(of: shoe) else {return}
                 cartShoes.remove(at: index)
                 favorites.remove(at: index)
             }
@@ -69,26 +92,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                 favorites.append(shoe)
             }
         }
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         if segue.identifier == "detailSegue" {
-                    
-            if let descriptionViewController = segue.destination as? DescriptionViewController {
-                      if let cell = sender as? ShoeCollectionViewCell {
-                        if let indexPath = collectionView.indexPath(for: cell) {
-                            let shoe = myShoes[indexPath.row]
-                               
-                    descriptionViewController.descriptionText = shoe.description
-                    descriptionViewController.price = String(format: "$%.2f", shoe.price)
-                    descriptionViewController.shoeImageName = shoe.imageName
-                    descriptionViewController.backgroundColor = shoe.backgroundColor
-                    descriptionViewController.titleText = shoe.title
-                    descriptionViewController.shoe = shoe
-                  }
-               }
-           }
-       }
     }
 }
 

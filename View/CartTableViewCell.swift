@@ -35,6 +35,7 @@ class CartTableViewCell: UITableViewCell {
         stepperLabel.text = String(Int(shoe.value))
     }
     
+    //update stepper label based on value of stepper
     @IBAction func stepperPressed(_ sender: UIStepper) {
         let indexPathRow = sender.tag
         var shoe = cartShoes[indexPathRow]

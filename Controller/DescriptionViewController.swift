@@ -10,13 +10,7 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
     
-    var backgroundColor: UIColor?
-    var titleText: String?
-    var price: String?
-    var descriptionText: String?
-    var shoeImageName: String?
     var shoe: Shoe?
-    
     
     @IBOutlet var shoeImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
@@ -24,20 +18,18 @@ class DescriptionViewController: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var cartButton: UIButton!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        shoeImage.image = UIImage(named: "\(shoeImageName ?? " ")")
-        titleLabel.text = titleText
-        priceLabel.text = price
-        descriptionLabel.text = descriptionText
-        shoeImage.backgroundColor = backgroundColor
-        cartButton.backgroundColor = backgroundColor
-        
+        //show detail version of selected shoe
+        shoeImage.image = UIImage(named: "\(shoe?.imageName ?? " ")")
+        titleLabel.text = shoe?.title
+        priceLabel.text = "$\(shoe?.price ?? 0.0)"
+        descriptionLabel.text = shoe?.description
+        shoeImage.backgroundColor = shoe?.backgroundColor
+        cartButton.backgroundColor = shoe?.backgroundColor
     }
     
-    
+    //add selected to the cart if it is not already there
     @IBAction func cartButtonPressed(_ sender: UIButton) {
         if let shoe = shoe {
             if !cartShoes.contains(shoe) && !favorites.contains(shoe) {

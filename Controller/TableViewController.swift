@@ -14,8 +14,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var cartTable: UITableView!
     @IBOutlet var totalPriceLabel: UILabel!
     
-   
-
+    @IBOutlet weak var purchaseButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +27,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cartShoes.count
       }
 
+    //populate table view with shoes in cart shoes array
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cartTable.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! CartTableViewCell
         let shoe = cartShoes[indexPath.row]
@@ -39,9 +39,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         totalPriceLabel.text = String(format: "$%.2f", TotalPrice)
             
         return cell
-        
     }
     
+    //set up price when stepper value changes
     @objc func stepperPressed(_ sender: UIStepper) {
         
     let indexPathRow = sender.tag
@@ -53,12 +53,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 if sender.value == 0 {
                     cartShoes.remove(at: index)
                     cartTable.reloadData()
+                    purchaseButton.isEnabled = false
             }
         }
-    }
-    
-    @IBAction func purchaseButtonPressed(_ sender:  UIButton) {
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
